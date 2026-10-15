@@ -1,0 +1,20 @@
+platform:   TMT
+abundance:  data/toy_protein_abundance.tsv
+metadata:   data/toy_metadata.tsv
+sample_col: sample
+condition:  sample_type
+batch_col:  plex
+organism:   human
+is_log:     true
+min_valid:  0.5
+impute:     knn
+normalize:  median
+padj:       0.05
+lfc:        1
+outdir:     results/proteomics_toy
+seed:       42
+
+contrasts:
+  - name:        Tumor_vs_Normal
+    numerator:   Tumor
+    denominator: Normal

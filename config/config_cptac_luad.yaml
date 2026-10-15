@@ -1,0 +1,37 @@
+# =============================================================================
+# CPTAC LUAD multi-omics config
+# =============================================================================
+platform:   TMT
+abundance:  data/cptac_luad_abundance.tsv
+metadata:   data/cptac_luad_metadata.tsv
+sample_col: sample
+condition:  sample_type
+organism:   human
+is_log:     true
+min_valid:  0.5
+impute:     knn
+normalize:  median
+padj:       0.05
+lfc:        1
+outdir:     results/proteomics_luad
+seed:       42
+
+contrasts:
+  - name:        Tumor_vs_Normal
+    numerator:   Tumor
+    denominator: Normal
+
+# Secondary-analysis params
+n_clusters: 3
+n_top_var:  2000
+n_modules:  8
+
+# ---- Multi-omics inputs (raw LinkedOmics .cct, tumor/normal separate) ----
+rna_tumor:      HS_CPTAC_LUAD_rnaseq_uq_rpkm_log2_NArm_TUMOR.cct
+rna_normal:     HS_CPTAC_LUAD_rnaseq_uq_rpkm_log2_NArm_NORMAL.cct
+prot_tumor:     HS_CPTAC_LUAD_proteome_ratio_NArm_TUMOR.cct
+prot_normal:    HS_CPTAC_LUAD_proteome_ratio_NArm_NORMAL.cct
+phospho_tumor:  HS_CPTAC_LUAD_phosphoproteome_ratio_norm_NArm_TUMOR.cct
+phospho_normal: HS_CPTAC_LUAD_phosphoproteome_ratio_norm_NArm_NORMAL.cct
+cnv_tumor:      HS_CPTAC_LUAD_cnv_gene_LR.cct
+# kinase_gmt:   data/kinase_substrate_sets.gmt   # optional

@@ -1,0 +1,20 @@
+name: proteomics-downstream
+channels: [conda-forge, bioconda]
+dependencies:
+  - r-base
+  - r-yaml
+  - r-dplyr
+  - r-tibble
+  - r-tidyr
+  - r-ggplot2
+  - r-circlize
+  - r-matrixstats
+  - bioconductor-limma
+  - bioconductor-complexheatmap
+  - bioconductor-fgsea
+  - bioconductor-impute
+  - bioconductor-sva
+  - bioconductor-clusterprofiler
+  - bioconductor-org.hs.eg.db
+  - bioconductor-org.mm.eg.db
+  - r-msigdbr
