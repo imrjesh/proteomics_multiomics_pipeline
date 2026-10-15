@@ -6,3 +6,5 @@ results/
 *.tsi
 HS_CPTAC*
 *.rds
+data/cptac_luad_abundance.tsv
+data/cptac_luad_metadata.tsv
